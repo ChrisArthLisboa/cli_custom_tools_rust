@@ -26,7 +26,7 @@ pub fn echo_rs() -> String {
 }
 
 use std::path::Path;
-use std::{fs, path};
+use std::fs;
 
 pub fn cat_rs() {
 
@@ -40,11 +40,11 @@ pub fn cat_rs() {
 
 pub fn ls_rs() {
 
-    let path: &Path = Path::new(&receiver()[0]);
+    let path_str: &String = &receiver()[0];
+    let path = Path::new(&path_str);
 
-    for son in path.read_dir() {
-        
-        
-    
+    for i in path.read_dir() {
+
+        dbg!(i);
     }
 }
